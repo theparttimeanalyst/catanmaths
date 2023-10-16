@@ -32,3 +32,36 @@ tile_tab1 = tile_tab %>% mutate(no = 1:n())
 
 
 ```
+
+
+
+```{r}
+
+selected_rows <- tile_tab1[sample(nrow(tile_tab1), 19, replace = FALSE), ]
+
+
+
+
+
+```
+
+
+```{r}
+
+x = c(1:5)
+
+y = c(1:25)
+
+
+gameboard = tibble(x) %>%
+                  mutate(v = 5) %>%
+                    uncount(v ) %>% 
+                      group_by(x) %>%
+                        mutate(y = 1:n())
+
+
+
+
+
+
+```
