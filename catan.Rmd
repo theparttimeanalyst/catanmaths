@@ -1,0 +1,34 @@
+---
+title: "Catan Maths"
+output: html_document
+date: "2023-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### packages
+
+```{r}
+
+
+library(tidyverse)
+
+
+
+```
+
+
+```{r}
+
+tile = c("brick", "brick", "brick", "wheat", "wheat",  "wheat", "wheat", 
+         "farm", "farm", "farm", "farm", "wood", "wood", "wood", "wood", 
+         "ore", "ore", "ore", "desert")
+
+
+tile_tab = tibble(tile)
+
+tile_tab1 = tile_tab %>% mutate(no = 1:n())
+
+
+```
