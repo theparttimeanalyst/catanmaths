@@ -21,7 +21,7 @@ library(tidyverse)
 
 ```{r}
 
-tile = c("brick", "brick", "brick", "wheat", "wheat",  "wheat", "wheat", 
+tile = c("brick", "brick", "brick","wheat", "wheat", "wheat", "wheat", 
          "farm", "farm", "farm", "farm", "wood", "wood", "wood", "wood", 
          "ore", "ore", "ore", "desert")
 
@@ -48,13 +48,13 @@ selected_rows <- tile_tab1[sample(nrow(tile_tab1), 19, replace = FALSE), ]
 
 ```{r}
 
-x = c(1:5)
 
-y = c(1:25)
+
+x = c(1:7)
 
 
 gameboard = tibble(x) %>%
-                  mutate(v = 5) %>%
+                  mutate(v = 7) %>%
                     uncount(v ) %>% 
                       group_by(x) %>%
                         mutate(y = 1:n())
@@ -62,6 +62,24 @@ gameboard = tibble(x) %>%
 
 
 
+
+
+```
+
+
+```{r}
+
+
+col = c(1:5)
+
+
+gameboard2 = tibble(col) %>%
+                  mutate(v = 5) %>%
+                    uncount(v ) %>% 
+                      group_by(col) %>%
+                        mutate(row = 1:n()) %>%
+                          mutate(type = if_else(row %in% c(1,5), 
+                                                if_else(col %in%),2))
 
 
 ```
